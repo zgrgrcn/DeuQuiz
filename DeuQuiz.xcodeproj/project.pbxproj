@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,9 +13,18 @@
 		844A5B7A24195B940051F7BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844A5B7824195B940051F7BE /* Main.storyboard */; };
 		844A5B7C24195B950051F7BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 844A5B7B24195B950051F7BE /* Assets.xcassets */; };
 		844A5B7F24195B950051F7BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844A5B7D24195B950051F7BE /* LaunchScreen.storyboard */; };
+		845033FE242174FF009A87B6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845033FD242174FF009A87B6 /* Constants.swift */; };
+		846E9B99241FA02E006F87AC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 846E9B98241FA02E006F87AC /* GoogleService-Info.plist */; };
+		84EE792524195F7900F1CD2B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE792424195F7900F1CD2B /* SignUpViewController.swift */; };
+		84EE792724195FA000F1CD2B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE792624195FA000F1CD2B /* LoginViewController.swift */; };
+		84EE792924195FBD00F1CD2B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE792824195FBD00F1CD2B /* HomeViewController.swift */; };
+		84EE792C24196F5D00F1CD2B /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE792B24196F5D00F1CD2B /* Utilities.swift */; };
+		FCA17C252E383DBB82E5B589 /* Pods_DeuQuiz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D458CB0761FAB482403B28A3 /* Pods_DeuQuiz.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		62443EFAB6E3E2D9BA2377F7 /* Pods-DeuQuiz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeuQuiz.release.xcconfig"; path = "Target Support Files/Pods-DeuQuiz/Pods-DeuQuiz.release.xcconfig"; sourceTree = "<group>"; };
+		76F0F4EDA0A71F0FCC2BA227 /* Pods-DeuQuiz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeuQuiz.debug.xcconfig"; path = "Target Support Files/Pods-DeuQuiz/Pods-DeuQuiz.debug.xcconfig"; sourceTree = "<group>"; };
 		844A5B6F24195B940051F7BE /* DeuQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeuQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		844A5B7224195B940051F7BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		844A5B7424195B940051F7BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +33,13 @@
 		844A5B7B24195B950051F7BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		844A5B7E24195B950051F7BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		844A5B8024195B950051F7BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		845033FD242174FF009A87B6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		846E9B98241FA02E006F87AC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		84EE792424195F7900F1CD2B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		84EE792624195FA000F1CD2B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		84EE792824195FBD00F1CD2B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		84EE792B24196F5D00F1CD2B /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		D458CB0761FAB482403B28A3 /* Pods_DeuQuiz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeuQuiz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCA17C252E383DBB82E5B589 /* Pods_DeuQuiz.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +59,8 @@
 			children = (
 				844A5B7124195B940051F7BE /* DeuQuiz */,
 				844A5B7024195B940051F7BE /* Products */,
+				EA009A65C6B0F7C28E08D3C6 /* Pods */,
+				9831F39FF517ECBCB7F47249 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +75,62 @@
 		844A5B7124195B940051F7BE /* DeuQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				845033FF242188D0009A87B6 /* Media */,
 				844A5B7224195B940051F7BE /* AppDelegate.swift */,
 				844A5B7424195B940051F7BE /* SceneDelegate.swift */,
-				844A5B7624195B940051F7BE /* ViewController.swift */,
+				84EE792D24196F6D00F1CD2B /* Helpers */,
+				84EE792A24195FE900F1CD2B /* View Controller */,
 				844A5B7824195B940051F7BE /* Main.storyboard */,
 				844A5B7B24195B950051F7BE /* Assets.xcassets */,
 				844A5B7D24195B950051F7BE /* LaunchScreen.storyboard */,
+				846E9B98241FA02E006F87AC /* GoogleService-Info.plist */,
 				844A5B8024195B950051F7BE /* Info.plist */,
 			);
 			path = DeuQuiz;
+			sourceTree = "<group>";
+		};
+		845033FF242188D0009A87B6 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Media;
+			sourceTree = "<group>";
+		};
+		84EE792A24195FE900F1CD2B /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				84EE792424195F7900F1CD2B /* SignUpViewController.swift */,
+				844A5B7624195B940051F7BE /* ViewController.swift */,
+				84EE792624195FA000F1CD2B /* LoginViewController.swift */,
+				84EE792824195FBD00F1CD2B /* HomeViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		84EE792D24196F6D00F1CD2B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				84EE792B24196F5D00F1CD2B /* Utilities.swift */,
+				845033FD242174FF009A87B6 /* Constants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		9831F39FF517ECBCB7F47249 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D458CB0761FAB482403B28A3 /* Pods_DeuQuiz.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA009A65C6B0F7C28E08D3C6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				76F0F4EDA0A71F0FCC2BA227 /* Pods-DeuQuiz.debug.xcconfig */,
+				62443EFAB6E3E2D9BA2377F7 /* Pods-DeuQuiz.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +140,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 844A5B8324195B950051F7BE /* Build configuration list for PBXNativeTarget "DeuQuiz" */;
 			buildPhases = (
+				FD0BAA3FABA59D5FE8F49B53 /* [CP] Check Pods Manifest.lock */,
 				844A5B6B24195B940051F7BE /* Sources */,
 				844A5B6C24195B940051F7BE /* Frameworks */,
 				844A5B6D24195B940051F7BE /* Resources */,
+				D6DC5D6BBA23418AFA754D59 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,12 +194,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				844A5B7F24195B950051F7BE /* LaunchScreen.storyboard in Resources */,
+				846E9B99241FA02E006F87AC /* GoogleService-Info.plist in Resources */,
 				844A5B7C24195B950051F7BE /* Assets.xcassets in Resources */,
 				844A5B7A24195B940051F7BE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D6DC5D6BBA23418AFA754D59 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DeuQuiz/Pods-DeuQuiz-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DeuQuiz/Pods-DeuQuiz-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DeuQuiz/Pods-DeuQuiz-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD0BAA3FABA59D5FE8F49B53 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DeuQuiz-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		844A5B6B24195B940051F7BE /* Sources */ = {
@@ -140,7 +251,12 @@
 			files = (
 				844A5B7724195B940051F7BE /* ViewController.swift in Sources */,
 				844A5B7324195B940051F7BE /* AppDelegate.swift in Sources */,
+				84EE792C24196F5D00F1CD2B /* Utilities.swift in Sources */,
+				84EE792524195F7900F1CD2B /* SignUpViewController.swift in Sources */,
+				84EE792724195FA000F1CD2B /* LoginViewController.swift in Sources */,
 				844A5B7524195B940051F7BE /* SceneDelegate.swift in Sources */,
+				84EE792924195FBD00F1CD2B /* HomeViewController.swift in Sources */,
+				845033FE242174FF009A87B6 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,8 +398,9 @@
 		};
 		844A5B8424195B950051F7BE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76F0F4EDA0A71F0FCC2BA227 /* Pods-DeuQuiz.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = DeuQuiz/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -299,8 +416,9 @@
 		};
 		844A5B8524195B950051F7BE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62443EFAB6E3E2D9BA2377F7 /* Pods-DeuQuiz.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = DeuQuiz/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
