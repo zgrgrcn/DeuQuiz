@@ -132,13 +132,13 @@
         <!--Home View Controller-->
         <scene sceneID="4Cq-qx-bJS">
             <objects>
-                <viewController storyboardIdentifier="HomeVC" id="03D-sP-4st" customClass="HomeViewController" customModule="DeuQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SHomeVC" id="03D-sP-4st" customClass="SHomeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sWg-ag-CHo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1SH-mo-lj7">
-                                <rect key="frame" x="155" y="437.5" width="104" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Home Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1SH-mo-lj7">
+                                <rect key="frame" x="122.5" y="437.5" width="169" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -154,7 +154,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YNX-1C-NFs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2235" y="130"/>
+            <point key="canvasLocation" x="2348" y="60"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="mt8-k9-am8">
@@ -247,6 +247,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ygt-Pm-8iO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="Jfy-Sx-TcU">
+            <objects>
+                <viewController storyboardIdentifier="THomeVC" id="tvD-js-DyA" customClass="THomeViewController" customModule="DeuQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mXa-Qs-ecq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teacher Home Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ykC-Ml-X0i">
+                                <rect key="frame" x="122.5" y="437.5" width="169" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ykC-Ml-X0i" firstAttribute="centerY" secondItem="mXa-Qs-ecq" secondAttribute="centerY" id="062-ij-ikH"/>
+                            <constraint firstItem="ykC-Ml-X0i" firstAttribute="centerX" secondItem="mXa-Qs-ecq" secondAttribute="centerX" id="Xml-ZB-ECs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Oam-xg-ogI"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Ta-7n-JJX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2984" y="60"/>
         </scene>
     </scenes>
 </document>

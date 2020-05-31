@@ -53,7 +53,12 @@ class LoginViewController: UIViewController {
                     self.showError(err.localizedDescription)
                 }else{
                 //user loged successfully
-                    self.transitionToHome()
+                  let mail=user?.user.email
+                  if (mail!.contains("@hoca.com")) {
+                    self.transitionToHome(type: "teacher")
+                  }else {
+                    self.transitionToHome(type: "student")
+                  }
                 }
             }
         }
@@ -70,11 +75,18 @@ class LoginViewController: UIViewController {
                 }
                 return nil
     }
-    func transitionToHome(){
-        let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
+  func transitionToHome(type:String){
+    if(type=="student"){
+      let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.ShomeViewController) as? SHomeViewController
+      self.view.window?.rootViewController = homeViewController
+      self.view.window?.makeKeyAndVisible()
+    }
+    else if(type=="teacher"){
+      let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.ThomeViewController) as? THomeViewController
+      self.view.window?.rootViewController = homeViewController
+      self.view.window?.makeKeyAndVisible()
+    }
         
-        self.view.window?.rootViewController = homeViewController
-        self.view.window?.makeKeyAndVisible()
     }
     func showError(_ message:String) {
         errorLabel.text = message

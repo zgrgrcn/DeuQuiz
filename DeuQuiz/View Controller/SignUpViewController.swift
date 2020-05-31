@@ -58,11 +58,13 @@ class SignUpViewController: UIViewController {
                     //There was an error creating user
                     self.showError(err!.localizedDescription)
                 }else {
-                    //User was created successfully, now store the student number
+                    //User was created successfully, now store the student number and mail
                     let db = Firestore.firestore()
-                    db.collection("users").addDocument(data: [
+                    db.collection("students").addDocument(data: [
                         "studentNumber": self.studentNumber,
-                        "uid": result!.user.uid
+                        "uid": result!.user.uid,
+                        "email": self.email,
+                        "pw": self.password
                     ]) { err in
                         if let err = err {
                             self.showError("Error adding document: \(err)")
@@ -95,7 +97,7 @@ class SignUpViewController: UIViewController {
             return nil
     }
     func transitionToHome(){
-        let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
+        let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.ShomeViewController) as? SHomeViewController
         
         view.window?.rootViewController = homeViewController
         view.window?.makeKeyAndVisible()
