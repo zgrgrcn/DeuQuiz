@@ -11,7 +11,7 @@ import Firebase
 import FirebaseAuth
 
 class LoginViewController: UIViewController {
-
+    
     @IBOutlet weak var emailAddressTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
@@ -21,7 +21,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setUpElement()
     }
     
@@ -33,7 +33,7 @@ class LoginViewController: UIViewController {
         Utilities.styleTextField(passwordTextField)
         Utilities.styleFilledButton(loginButton)
     }
-
+    
     
     @IBAction func loginButtonTapped(_ sender: Any) {
         //0-take text fields
@@ -46,19 +46,19 @@ class LoginViewController: UIViewController {
             //There@s something wrong with the fields, Show error message
             showError(error!)
         }else{
-        //2-goto database end take user
+            //2-goto database end take user
             Auth.auth().signIn(withEmail: email, password: password) { (user, err) in
                 //check if error
                 if let err=err{
                     self.showError(err.localizedDescription)
                 }else{
-                //user loged successfully
-                  let mail=user?.user.email
-                  if (mail!.contains("@hoca.com")) {
-                    self.transitionToHome(type: "teacher")
-                  }else {
-                    self.transitionToHome(type: "student")
-                  }
+                    //user loged successfully
+                    let mail=user?.user.email
+                    if (mail!.contains("@hoca.com")) {
+                        self.transitionToHome(type: "teacher")
+                    }else {
+                        self.transitionToHome(type: "student")
+                    }
                 }
             }
         }
@@ -68,24 +68,24 @@ class LoginViewController: UIViewController {
     
     //check the fields and validate that the data is correct. If everything is correct returns nil. Otherwise returs the error message as a string
     func validateFields()-> String?{
-                //1.1-Check that all fields are filled in
-                if  email == "" ||
-                 password == ""  {
-                    return "Please fill in all fields."
-                }
-                return nil
+        //1.1-Check that all fields are filled in
+        if  email == "" ||
+            password == ""  {
+            return "Please fill in all fields."
+        }
+        return nil
     }
-  func transitionToHome(type:String){
-    if(type=="student"){
-      let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.ShomeViewController) as? SHomeViewController
-      self.view.window?.rootViewController = homeViewController
-      self.view.window?.makeKeyAndVisible()
-    }
-    else if(type=="teacher"){
-      let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.ThomeViewController) as? THomeViewController
-      self.view.window?.rootViewController = homeViewController
-      self.view.window?.makeKeyAndVisible()
-    }
+    func transitionToHome(type:String){
+        if(type=="student"){
+            let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.ShomeViewController) as? SHomeViewController
+            self.view.window?.rootViewController = homeViewController
+            self.view.window?.makeKeyAndVisible()
+        }
+        else if(type=="teacher"){
+            let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.ThomeViewController) as? THomeViewController
+            self.view.window?.rootViewController = homeViewController
+            self.view.window?.makeKeyAndVisible()
+        }
         
     }
     func showError(_ message:String) {

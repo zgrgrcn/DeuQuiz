@@ -71,7 +71,7 @@ class SignUpViewController: UIViewController {
                         }
                     }
                     //3-Transition to the home screen
-                    self.transitionToHome()
+//                    self.transitionToHome()
                 }
             }
             
@@ -101,6 +101,7 @@ class SignUpViewController: UIViewController {
         
         view.window?.rootViewController = homeViewController
         view.window?.makeKeyAndVisible()
+        
     }
     func showError(_ message:String) {
         errorLabel.text = message
