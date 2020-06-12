@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mPb-ff-sSl">
-                                <rect key="frame" x="40" y="702" width="334" height="120"/>
+                                <rect key="frame" x="40" y="632" width="334" height="190"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcU-Yx-RAo">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
@@ -24,13 +24,21 @@
                                             <constraint firstAttribute="height" constant="50" id="GWV-ou-B1c"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Sign Up"/>
+                                        <state key="normal" title="Test Quiz Page"/>
                                         <connections>
                                             <segue destination="PFH-dd-cZi" kind="show" id="zbi-yg-NT4"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iAg-H9-JdO">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HR9-R0-hqO">
                                         <rect key="frame" x="0.0" y="70" width="334" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="0c2-tc-yLu"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Sign Up"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iAg-H9-JdO">
+                                        <rect key="frame" x="0.0" y="140" width="334" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Login"/>
                                         <connections>
@@ -277,6 +285,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dGr-aU-e68" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3116" y="-216"/>
+        </scene>
+        <!--Quiz Home View Controller-->
+        <scene sceneID="zXi-IY-yyh">
+            <objects>
+                <viewController storyboardIdentifier="QuizHomeVC" id="Ar2-7P-ZGM" customClass="QuizHomeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DLj-hA-OBi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gFr-wG-Yhx">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="91"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="91" id="Koi-TW-uCu"/>
+                                    <constraint firstAttribute="width" constant="414" id="SKi-v3-xcA"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="gFr-wG-Yhx" firstAttribute="leading" secondItem="U1N-Df-H5U" secondAttribute="leading" id="5cK-H3-szD"/>
+                            <constraint firstItem="gFr-wG-Yhx" firstAttribute="trailing" secondItem="U1N-Df-H5U" secondAttribute="trailing" id="Iue-H1-EqT"/>
+                            <constraint firstItem="gFr-wG-Yhx" firstAttribute="top" secondItem="DLj-hA-OBi" secondAttribute="top" id="Yg0-DW-nxy"/>
+                            <constraint firstItem="U1N-Df-H5U" firstAttribute="trailing" secondItem="gFr-wG-Yhx" secondAttribute="trailing" constant="87" id="kkN-vz-doK"/>
+                            <constraint firstItem="gFr-wG-Yhx" firstAttribute="leading" secondItem="U1N-Df-H5U" secondAttribute="leading" constant="87" id="y5b-SU-iHp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="U1N-Df-H5U"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="CSE-3m-0to"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EYZ-8F-MbG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4328.985507246377" y="129.91071428571428"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
