@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class QuizInfoVC: UIViewController {
     public static var quiz = QuizEntity()
@@ -16,12 +17,15 @@ class QuizInfoVC: UIViewController {
     @IBOutlet weak var enterCode: UITextField!
     
     override func viewDidLoad() {
+        
     }
     
     @IBAction func btnMakeQuiz(_ sender: Any) {
         var title = quizTitle.text;
         var totalDuration = Int(duration.text!) ?? 10;
         var code = enterCode.text;
+        
+        var userID = Auth.auth().currentUser?.uid
     }
     
 }

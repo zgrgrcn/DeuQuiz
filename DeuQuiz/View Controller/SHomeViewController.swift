@@ -31,14 +31,14 @@ class SHomeViewController: UIViewController {
 
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-    {
-        if segue.destination is QuizViewController
-        {
-            let vc = segue.destination as? QuizViewController
-            vc?.questionModels = questionModels
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+//    {
+//        if segue.destination is QuizViewController
+//        {
+//            let vc = segue.destination as? QuizViewController
+//            vc?.questionModels = questionModels
+//        }
+//    }
 
     @IBAction func signOut(_ sender: Any) {
         let firebaseAuth = Auth.auth()
@@ -81,7 +81,7 @@ class SHomeViewController: UIViewController {
 
     private func goToQuiz() {
 
-        questionModels
+//        questionModels
     }
 
 // enterToQuiz - HELPER

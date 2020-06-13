@@ -32,13 +32,20 @@ class ViewController: UIViewController {
     }
     
     func transitionToHome(){
-//        let nextViewController = storyboard?.instantiateViewController(withIdentifier: "SHomeVC") as? SHomeViewController
-//        view.window?.rootViewController = nextViewController
-//        view.window?.makeKeyAndVisible()
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let mail=Auth.auth().currentUser?.email
+        
+        if (mail!.contains("@hoca.com")) {
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "THomeVC") as! THomeViewController
+            self.show(nextViewController, sender: nil)
+        }else {
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "SHomeVC") as! SHomeViewController
+            self.show(nextViewController, sender: nil)
+        }
 
-      let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-      let nextViewController = storyBoard.instantiateViewController(withIdentifier: "SHomeVC") as! SHomeViewController
-      self.show(nextViewController, sender: nil)
+      
+      
+      
     }
     func setUpElement() {
         // Style the elements

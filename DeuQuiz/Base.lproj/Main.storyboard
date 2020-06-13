@@ -305,7 +305,6 @@
         <!--Make QuizVC-->
         <scene sceneID="GFA-xJ-uBm">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FBz-02-OS0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="kOc-c0-Mh9" customClass="MakeQuizVC" customModule="DeuQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="16b-Mw-pqi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -481,6 +480,7 @@
                         <outlet property="txtQuestion" destination="iKo-BY-n74" id="57o-wr-S6c"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FBz-02-OS0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="815.94202898550736" y="1782.5892857142856"/>
         </scene>
@@ -505,13 +505,12 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="I4r-sg-O94"/>
                                     <constraint firstAttribute="bottom" secondItem="BXy-K8-jAa" secondAttribute="bottom" constant="5" id="Lcc-t6-tCD"/>
                                     <constraint firstItem="BXy-K8-jAa" firstAttribute="centerX" secondItem="xuG-fy-O9M" secondAttribute="centerX" id="Zxi-DF-iwJ"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="da1-M8-rM3">
-                                <rect key="frame" x="22" y="197" width="370" height="283"/>
+                                <rect key="frame" x="22" y="379.5" width="370" height="283"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Quiz Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="II8-2c-VNu">
                                         <rect key="frame" x="0.0" y="0.0" width="370" height="50"/>
@@ -545,19 +544,18 @@
                                 <constraints>
                                     <constraint firstItem="hBb-Q7-HQb" firstAttribute="height" secondItem="II8-2c-VNu" secondAttribute="height" id="4DW-u0-5F4"/>
                                     <constraint firstItem="peZ-UQ-raB" firstAttribute="height" secondItem="II8-2c-VNu" secondAttribute="height" id="Ofb-qc-rqJ"/>
-                                    <constraint firstItem="peZ-UQ-raB" firstAttribute="height" secondItem="53j-DD-Xwu" secondAttribute="height" multiplier="1.47059" id="XWt-Se-DgI"/>
-                                    <constraint firstItem="hBb-Q7-HQb" firstAttribute="height" secondItem="peZ-UQ-raB" secondAttribute="height" id="g4D-LZ-VRD"/>
-                                    <constraint firstAttribute="width" constant="370" id="l7l-rZ-vPZ"/>
                                     <constraint firstItem="53j-DD-Xwu" firstAttribute="height" secondItem="II8-2c-VNu" secondAttribute="height" multiplier="0.68" id="yhu-JV-6EM"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="da1-M8-rM3" firstAttribute="centerX" secondItem="xuG-fy-O9M" secondAttribute="centerX" id="1KD-2j-yTS"/>
-                            <constraint firstItem="dFg-nI-vS0" firstAttribute="bottom" secondItem="da1-M8-rM3" secondAttribute="bottom" constant="382" id="5zZ-6J-kUW"/>
                             <constraint firstItem="xuG-fy-O9M" firstAttribute="centerX" secondItem="n0H-FB-jh0" secondAttribute="centerX" id="7tV-EX-s6O"/>
+                            <constraint firstItem="da1-M8-rM3" firstAttribute="leading" secondItem="dFg-nI-vS0" secondAttribute="leading" constant="22" id="CFS-Io-aVR"/>
+                            <constraint firstItem="da1-M8-rM3" firstAttribute="centerX" secondItem="xuG-fy-O9M" secondAttribute="centerX" id="DXr-1G-5iM"/>
+                            <constraint firstItem="da1-M8-rM3" firstAttribute="top" secondItem="n0H-FB-jh0" secondAttribute="top" constant="379.5" id="Fwe-L6-BsQ"/>
                             <constraint firstItem="dFg-nI-vS0" firstAttribute="bottom" secondItem="xuG-fy-O9M" secondAttribute="bottom" constant="772" id="PMy-js-BVz"/>
+                            <constraint firstItem="xuG-fy-O9M" firstAttribute="top" secondItem="n0H-FB-jh0" secondAttribute="topMargin" constant="-44" id="cI5-dB-iCy"/>
                             <constraint firstItem="xuG-fy-O9M" firstAttribute="leading" secondItem="dFg-nI-vS0" secondAttribute="leading" id="pQ6-vd-qNM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dFg-nI-vS0"/>
