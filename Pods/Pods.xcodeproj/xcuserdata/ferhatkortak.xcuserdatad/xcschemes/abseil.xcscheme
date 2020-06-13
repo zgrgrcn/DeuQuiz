@@ -19,5 +19,18 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Debug"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "844A5B6E24195B940051F7BE"
+            BuildableName = "DeuQuiz.app"
+            BlueprintName = "DeuQuiz"
+            ReferencedContainer = "container:../DeuQuiz.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+      <LocationScenarioReference
+         identifier = "com.apple.dt.IDEFoundation.CurrentLocationScenarioIdentifier"
+         referenceType = "1">
+      </LocationScenarioReference>
    </LaunchAction>
 </Scheme>

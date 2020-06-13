@@ -339,6 +339,20 @@
                                     <action selector="signOut:" destination="Rt3-LH-31E" eventType="touchUpInside" id="e9T-Gi-SEP"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LSN-Lm-csC">
+                                <rect key="frame" x="184" y="686" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="enterToQuiz:" destination="Rt3-LH-31E" eventType="touchUpInside" id="gYZ-fv-Nfe"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YCM-rv-sOk">
+                                <rect key="frame" x="159" y="631" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -349,6 +363,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="7W7-nw-CSg"/>
                     <connections>
+                        <outlet property="quizCodeText" destination="YCM-rv-sOk" id="EGR-1r-lUw"/>
                         <outlet property="signOut" destination="Uo6-OO-NB2" id="zxw-dO-OdI"/>
                     </connections>
                 </viewController>
@@ -374,7 +389,7 @@
                                         <nil key="highlightedColor"/>
                                         <color key="shadowColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mbh-KK-phQ">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mbh-KK-phQ" userLabel="LabelQuestionCount">
                                         <rect key="frame" x="381" y="47" width="13" height="34.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -503,6 +518,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Finish Quiz"/>
+                                        <connections>
+                                            <action selector="finishQuiz:" destination="kOc-c0-Mh9" eventType="touchUpInside" id="Hao-aY-N8x"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -523,6 +541,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="XLm-dk-PRg"/>
                     <connections>
+                        <outlet property="questionCounter" destination="Mbh-KK-phQ" id="yEV-ht-E2W"/>
                         <outlet property="radioButton1" destination="Gi0-7Z-i3R" id="Bak-Lu-PHS"/>
                         <outlet property="radioButton2" destination="hip-M8-vb5" id="PNl-vV-6KJ"/>
                         <outlet property="radioButton3" destination="ImX-vG-GQF" id="XzK-kD-ZWx"/>

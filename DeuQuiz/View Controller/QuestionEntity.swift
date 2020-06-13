@@ -11,18 +11,19 @@ import UIKit
 class QuestionEntity {
     
 
-    init(option1:String, option2:String, option3:String, option4:String,
+    init(order:Int,option1:String, option2:String, option3:String, option4:String,
          correct:String, questionText:String) {
+        self.order=order
         self.option1 = option1
-        self.option2 = option1
-        self.option3 = option1
-        self.option4 = option1
-        self.correctAnswer = option1
+        self.option2 = option2
+        self.option3 = option3
+        self.option4 = option4
+        self.correctAnswer = correct
         self.questionText = questionText
     }
     
     var questionText = ""
-    
+    var order = 1
     var option1 = ""
     var option2 = ""
     var option3 = ""
