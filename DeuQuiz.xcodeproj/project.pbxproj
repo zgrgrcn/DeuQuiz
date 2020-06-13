@@ -20,6 +20,8 @@
 		84EE792724195FA000F1CD2B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE792624195FA000F1CD2B /* LoginViewController.swift */; };
 		84EE792924195FBD00F1CD2B /* SHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE792824195FBD00F1CD2B /* SHomeViewController.swift */; };
 		84EE792C24196F5D00F1CD2B /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE792B24196F5D00F1CD2B /* Utilities.swift */; };
+		E07CA1522494D4CD00FC75CD /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CA1512494D4CD00FC75CD /* QuizViewController.swift */; };
+		E07CA1542494D4DC00FC75CD /* QuizDescViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CA1532494D4DC00FC75CD /* QuizDescViewController.swift */; };
 		FCA17C252E383DBB82E5B589 /* Pods_DeuQuiz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D458CB0761FAB482403B28A3 /* Pods_DeuQuiz.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +44,8 @@
 		84EE792824195FBD00F1CD2B /* SHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHomeViewController.swift; sourceTree = "<group>"; };
 		84EE792B24196F5D00F1CD2B /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		D458CB0761FAB482403B28A3 /* Pods_DeuQuiz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeuQuiz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E07CA1512494D4CD00FC75CD /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		E07CA1532494D4DC00FC75CD /* QuizDescViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizDescViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				84EE792624195FA000F1CD2B /* LoginViewController.swift */,
 				84EE792824195FBD00F1CD2B /* SHomeViewController.swift */,
 				84A7C0092484292D00501F9E /* THomeViewController.swift */,
+				E07CA1512494D4CD00FC75CD /* QuizViewController.swift */,
+				E07CA1532494D4DC00FC75CD /* QuizDescViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -253,9 +259,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				844A5B7724195B940051F7BE /* ViewController.swift in Sources */,
+				E07CA1522494D4CD00FC75CD /* QuizViewController.swift in Sources */,
 				844A5B7324195B940051F7BE /* AppDelegate.swift in Sources */,
 				84EE792C24196F5D00F1CD2B /* Utilities.swift in Sources */,
 				84EE792524195F7900F1CD2B /* SignUpViewController.swift in Sources */,
+				E07CA1542494D4DC00FC75CD /* QuizDescViewController.swift in Sources */,
 				84A7C00A2484292D00501F9E /* THomeViewController.swift in Sources */,
 				84EE792724195FA000F1CD2B /* LoginViewController.swift in Sources */,
 				844A5B7524195B940051F7BE /* SceneDelegate.swift in Sources */,
