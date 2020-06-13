@@ -332,9 +332,6 @@ PODS:
   - gRPC-Core/Interface (1.28.2)
   - GTMSessionFetcher/Core (1.4.0)
   - leveldb-library (1.22)
-  - MBCheckboxButton (1.4)
-  - MBRadioButton (1.4)
-  - MBRadioCheckboxButton (2.0)
   - nanopb (1.30905.0):
     - nanopb/decode (= 1.30905.0)
     - nanopb/encode (= 1.30905.0)
@@ -347,9 +344,6 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Firestore
-  - MBCheckboxButton
-  - MBRadioButton
-  - MBRadioCheckboxButton
 
 SPEC REPOS:
   trunk:
@@ -372,9 +366,6 @@ SPEC REPOS:
     - gRPC-Core
     - GTMSessionFetcher
     - leveldb-library
-    - MBCheckboxButton
-    - MBRadioButton
-    - MBRadioCheckboxButton
     - nanopb
     - PromisesObjC
 
@@ -398,12 +389,9 @@ SPEC CHECKSUMS:
   gRPC-Core: 4afa11bfbedf7cdecd04de535a9e046893404ed5
   GTMSessionFetcher: 6f5c8abbab8a9bce4bb3f057e317728ec6182b10
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
-  MBCheckboxButton: 6ad0b46b111c59ea9dec558e0df1973cee2eb3aa
-  MBRadioButton: dcf111c9bb633d4cf6e83200d804af6e025033c8
-  MBRadioCheckboxButton: 6e2a2cdc441e292e45b64c4e65eb8fc1fc05eef2
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
 
-PODFILE CHECKSUM: 1b49f03ab36d10f0d07edf5fbe6872f98453c1ab
+PODFILE CHECKSUM: 424c34b4e96dabf4cd5334117f94de25a5f5504a
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.9.1
