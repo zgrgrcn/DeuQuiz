@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n82-dq-PJk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n82-dq-PJk">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,9 +25,6 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Test Quiz Page"/>
-                                        <connections>
-                                            <segue destination="tJM-wX-QJp" kind="show" id="dTt-UR-Y4j"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qiM-cv-Fwv">
                                         <rect key="frame" x="0.0" y="70" width="334" height="50"/>
@@ -237,11 +234,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nco-Mz-W1C">
+                                <rect key="frame" x="164" y="589" width="86" height="30"/>
+                                <state key="normal" title="enter to quiz"/>
+                                <connections>
+                                    <action selector="createNewQuiz:" destination="tvD-js-DyA" eventType="touchUpInside" id="z16-lV-IGB"/>
+                                    <action selector="enterToQuiz:" destination="Rt3-LH-31E" eventType="touchUpInside" id="LFV-lU-Bq0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="ykC-Ml-X0i" firstAttribute="centerY" secondItem="mXa-Qs-ecq" secondAttribute="centerY" id="062-ij-ikH"/>
+                            <constraint firstItem="Oam-xg-ogI" firstAttribute="trailing" secondItem="Nco-Mz-W1C" secondAttribute="trailing" constant="164" id="6iu-xl-XG9"/>
+                            <constraint firstItem="Nco-Mz-W1C" firstAttribute="leading" secondItem="Oam-xg-ogI" secondAttribute="leading" constant="164" id="Sj2-0v-Oys"/>
                             <constraint firstItem="ykC-Ml-X0i" firstAttribute="centerX" secondItem="mXa-Qs-ecq" secondAttribute="centerX" id="Xml-ZB-ECs"/>
+                            <constraint firstItem="Oam-xg-ogI" firstAttribute="bottom" secondItem="Nco-Mz-W1C" secondAttribute="bottom" constant="243" id="th9-rI-pFf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Oam-xg-ogI"/>
                     </view>
@@ -300,14 +308,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWI-4G-yrN">
-                                <rect key="frame" x="265" y="291" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="test:" destination="Rt3-LH-31E" eventType="touchUpInside" id="Ljn-Ov-lMl"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -331,6 +331,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dGr-aU-e68" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3115.9420289855075" y="-216.29464285714286"/>
+        </scene>
+        <!--Quiz View Controller-->
+        <scene sceneID="lMw-FM-fYA">
+            <objects>
+                <viewController storyboardIdentifier="QuizVC" id="URy-gp-epd" customClass="QuizViewController" customModule="DeuQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="J0e-sR-hPP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="PfD-Rb-17c"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VMe-h6-V4S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4125" y="-216"/>
         </scene>
         <!--Quiz Desc View Controller-->
         <scene sceneID="snE-NF-FMV">
@@ -359,7 +374,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="oaV-CN-7a4">
-                                <rect key="frame" x="22" y="240" width="370" height="299"/>
+                                <rect key="frame" x="22" y="240" width="370" height="216"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Quiz Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4sJ-T7-Kth">
                                         <rect key="frame" x="0.0" y="0.0" width="370" height="50"/>
@@ -379,22 +394,6 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                         <state key="normal" title="Make Quiz"/>
-                                        <connections>
-                                            <action selector="loginButtonTapped:" destination="RP4-Ez-ill" eventType="touchUpInside" id="tni-Gd-eQI"/>
-                                            <segue destination="LMQ-GD-mYL" kind="show" id="HWT-yH-rYY"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vAB-0t-Ns3">
-                                        <rect key="frame" x="0.0" y="249" width="370" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="0CT-vi-QKT"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                        <state key="normal" title="Make Quiz"/>
-                                        <connections>
-                                            <action selector="loginButtonTapped:" destination="RP4-Ez-ill" eventType="touchUpInside" id="iph-1j-kfk"/>
-                                            <action selector="test1:" destination="tJM-wX-QJp" eventType="touchUpInside" id="Zk0-Nd-zK6"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -418,7 +417,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nqz-Kz-LQX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4176.811594202899" y="152.67857142857142"/>
+            <point key="canvasLocation" x="4125" y="467"/>
         </scene>
         <!--Quiz Maker View Controller-->
         <scene sceneID="uyE-pn-l4Y">
@@ -462,68 +461,45 @@
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="676"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VrA-yP-d5n">
-                                                <rect key="frame" x="0.0" y="0.0" width="350" height="311"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="350" height="257"/>
                                                 <color key="backgroundColor" red="0.66262265185297542" green="0.85082137924401868" blue="0.67053104655440088" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Lak-VX-lcy">
-                                                <rect key="frame" x="0.0" y="344" width="350" height="166"/>
+                                                <rect key="frame" x="0.0" y="290" width="350" height="220"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1iV-5z-Dc7">
-                                                        <rect key="frame" x="0.0" y="0.0" width="291" height="166"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="350" height="220"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Option 1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6mK-H4-cmq">
-                                                                <rect key="frame" x="0.0" y="0.0" width="291" height="34"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="47.5"/>
                                                                 <accessibility key="accessibilityConfiguration" label="email address"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Option 2" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vXa-9I-cG4">
-                                                                <rect key="frame" x="0.0" y="44" width="291" height="34"/>
+                                                                <rect key="frame" x="0.0" y="57.5" width="350" height="47.5"/>
                                                                 <accessibility key="accessibilityConfiguration" label="email address"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Option 3" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bd8-bP-0Yb">
-                                                                <rect key="frame" x="0.0" y="88" width="291" height="34"/>
+                                                                <rect key="frame" x="0.0" y="115" width="350" height="47.5"/>
                                                                 <accessibility key="accessibilityConfiguration" label="email address"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Option 4" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oui-dW-FCC">
-                                                                <rect key="frame" x="0.0" y="132" width="291" height="34"/>
+                                                                <rect key="frame" x="0.0" y="172.5" width="350" height="47.5"/>
                                                                 <accessibility key="accessibilityConfiguration" label="email address"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="TKj-QM-eKp">
-                                                        <rect key="frame" x="321" y="0.0" width="29" height="166"/>
-                                                        <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kh5-K6-tDQ">
-                                                                <rect key="frame" x="0.0" y="0.0" width="29" height="166"/>
-                                                                <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jmC-PK-TeC" userLabel="Option1">
-                                                                        <rect key="frame" x="5" y="5" width="20" height="20"/>
-                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                        <state key="normal" image="radio-unchecked"/>
-                                                                        <state key="selected" image="radio-checked"/>
-                                                                        <connections>
-                                                                            <action selector="rbTap:" destination="LMQ-GD-mYL" eventType="touchUpInside" id="dMB-br-XVo"/>
-                                                                        </connections>
-                                                                    </button>
-                                                                </subviews>
-                                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                            </view>
-                                                        </subviews>
-                                                    </stackView>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="1iV-5z-Dc7" firstAttribute="width" secondItem="TKj-QM-eKp" secondAttribute="width" multiplier="10" id="8b9-MN-nhI"/>
-                                                </constraints>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h7E-hA-nll">
                                                 <rect key="frame" x="0.0" y="543" width="350" height="50"/>
@@ -532,9 +508,6 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="Next Question"/>
-                                                <connections>
-                                                    <action selector="loginButtonTapped:" destination="RP4-Ez-ill" eventType="touchUpInside" id="hev-KB-xg6"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWS-RC-THn">
                                                 <rect key="frame" x="0.0" y="626" width="350" height="50"/>
@@ -568,11 +541,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NQz-UI-UMb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5140.579710144928" y="152.67857142857142"/>
+            <point key="canvasLocation" x="5088" y="467"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="radio-checked" width="512" height="512"/>
-        <image name="radio-unchecked" width="512" height="512"/>
-    </resources>
 </document>

@@ -31,9 +31,15 @@ class SHomeViewController: UIViewController {
 
     }
 
-    @IBAction func test(_ sender: Any) {
-        
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.destination is QuizViewController
+        {
+            let vc = segue.destination as? QuizViewController
+            vc?.questionModels = questionModels
+        }
     }
+
     @IBAction func signOut(_ sender: Any) {
         let firebaseAuth = Auth.auth()
         do {
@@ -61,16 +67,21 @@ class SHomeViewController: UIViewController {
 
                 // Take the questions
                 self.takeTheQuestions(quizRef: myQuizRef)
+                
+                
+                self.goToQuiz()
 
-
-//                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-//                print("Document data: \(dataDescription)")
             } else {
                 print("Quiz does not exist")
             }
         }
 
 
+    }
+
+    private func goToQuiz() {
+
+        questionModels
     }
 
 // enterToQuiz - HELPER
@@ -81,7 +92,7 @@ class SHomeViewController: UIViewController {
                 print("Error getting questions: \(err)")
             } else {
                 for question in questions!.documents {
-                    print("\(question.documentID) => \(question.data())")
+                    //print("\(question.documentID) => \(question.data())")
                     self.questionModels.append(Question(text: question.documentID + ") " + (question.data()["question"] as! String), answers: [
                         Answer(text: question.data()["option1"] as! String, correct: (question.data()["correct"] as! String)=="option1"),
                         Answer(text: question.data()["option2"] as! String, correct: (question.data()["correct"] as! String)=="option2"),
@@ -89,7 +100,7 @@ class SHomeViewController: UIViewController {
                         Answer(text: question.data()["option4"] as! String, correct: (question.data()["correct"] as! String)=="option4")
                     ]))
                 }
-                print("questionModels: ",self.questionModels)
+                //print("questionModels: ",self.questionModels)
             }
 
         }
@@ -100,14 +111,14 @@ class SHomeViewController: UIViewController {
         let participantsRef = myQuizRef.collection("participants")
         participantsRef.addDocument(data: [
             "uid": Auth.auth().currentUser!.uid,
-            "email": Auth.auth().currentUser!.email,
+            "email": Auth.auth().currentUser!.email!,
             "enterTime": Date(timeIntervalSince1970: Date().timeIntervalSince1970)
         ]) { err in
             if let err = err {
                 print("Error adding student info to participants: \(err)")
             }
         }
-        print("successful")
+        print("added to participants")
     }
 }
 
