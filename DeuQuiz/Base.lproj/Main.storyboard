@@ -262,30 +262,57 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uo6-OO-NB2">
-                                <rect key="frame" x="327" y="121" width="54" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uo6-OO-NB2">
+                                <rect key="frame" x="330" y="94" width="54" height="30"/>
                                 <state key="normal" title="signOut"/>
                                 <connections>
                                     <action selector="signOut:" destination="Rt3-LH-31E" eventType="touchUpInside" id="e9T-Gi-SEP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YU5-QZ-NwN">
+                                <rect key="frame" x="163.5" y="682" width="87" height="30"/>
+                                <state key="normal" title="enter to quiz"/>
+                                <connections>
+                                    <action selector="enterToQuiz:" destination="Rt3-LH-31E" eventType="touchUpInside" id="KWq-oL-phg"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Quiz Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xx2-1Z-gFQ">
+                                <rect key="frame" x="159.5" y="628" width="95.5" height="34"/>
+                                <accessibility key="accessibilityConfiguration" hint="quizCodeTextField"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWI-4G-yrN">
+                                <rect key="frame" x="265" y="291" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="test:" destination="Rt3-LH-31E" eventType="touchUpInside" id="Ljn-Ov-lMl"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="vYy-UB-4rl" firstAttribute="centerX" secondItem="fl3-RL-ofs" secondAttribute="centerX" id="0V3-lX-APT"/>
+                            <constraint firstItem="BUA-ME-q9R" firstAttribute="bottom" secondItem="YU5-QZ-NwN" secondAttribute="bottom" constant="150" id="9ul-jJ-y1G"/>
+                            <constraint firstItem="Uo6-OO-NB2" firstAttribute="top" secondItem="BUA-ME-q9R" secondAttribute="top" constant="50" id="HPd-N9-uVl"/>
+                            <constraint firstItem="YU5-QZ-NwN" firstAttribute="top" secondItem="Xx2-1Z-gFQ" secondAttribute="bottom" constant="20" id="PWl-Uz-vth"/>
                             <constraint firstItem="vYy-UB-4rl" firstAttribute="centerY" secondItem="fl3-RL-ofs" secondAttribute="centerY" id="Qrc-kK-FMr"/>
+                            <constraint firstItem="YU5-QZ-NwN" firstAttribute="centerX" secondItem="fl3-RL-ofs" secondAttribute="centerX" id="Uq9-fr-gwc"/>
+                            <constraint firstItem="BUA-ME-q9R" firstAttribute="trailing" secondItem="Uo6-OO-NB2" secondAttribute="trailing" constant="30" id="ZuZ-gN-fat"/>
+                            <constraint firstItem="Xx2-1Z-gFQ" firstAttribute="centerX" secondItem="fl3-RL-ofs" secondAttribute="centerX" id="wEb-gi-RZP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BUA-ME-q9R"/>
                     </view>
                     <navigationItem key="navigationItem" id="7W7-nw-CSg"/>
                     <connections>
+                        <outlet property="quizCodeText" destination="Xx2-1Z-gFQ" id="a3H-2L-EcZ"/>
                         <outlet property="signOut" destination="Uo6-OO-NB2" id="zxw-dO-OdI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dGr-aU-e68" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3116" y="-216"/>
+            <point key="canvasLocation" x="3115.9420289855075" y="-216.29464285714286"/>
         </scene>
     </scenes>
 </document>

@@ -23,14 +23,6 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         setUpElement()
-      
-      if Auth.auth().currentUser != nil {
-          // User is signed in.
-          // ...
-      } else {
-          // No user is signed in.
-          // ...
-      }
     }
 
     
