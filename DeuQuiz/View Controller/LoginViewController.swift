@@ -23,8 +23,18 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         setUpElement()
+      
+      if Auth.auth().currentUser != nil {
+          // User is signed in.
+          // ...
+      } else {
+          // No user is signed in.
+          // ...
+      }
     }
+
     
+
     func setUpElement() {
         errorLabel.alpha = 0 // hide initial error label
         
@@ -47,17 +57,18 @@ class LoginViewController: UIViewController {
             showError(error!)
         }else{
             //2-goto database end take user
-            Auth.auth().signIn(withEmail: email, password: password) { (user, err) in
+            Auth.auth().signIn(withEmail: email, password: password) { [weak self] user, err in
+                guard let strongSelf = self else { return }
                 //check if error
                 if let err=err{
-                    self.showError(err.localizedDescription)
+                    self?.showError(err.localizedDescription)
                 }else{
                     //user loged successfully
                     let mail=user?.user.email
                     if (mail!.contains("@hoca.com")) {
-                        self.transitionToHome(type: "teacher")
+                        strongSelf.transitionToHome(type: "teacher")
                     }else {
-                        self.transitionToHome(type: "student")
+                        strongSelf.transitionToHome(type: "student")
                     }
                 }
             }
@@ -77,7 +88,7 @@ class LoginViewController: UIViewController {
     }
     func transitionToHome(type:String){
         if(type=="student"){
-            let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.ShomeViewController) as? SHomeViewController
+            let homeViewController = self.storyboard?.instantiateViewController(identifier: "SHomeVC") as? SHomeViewController
             self.view.window?.rootViewController = homeViewController
             self.view.window?.makeKeyAndVisible()
         }
