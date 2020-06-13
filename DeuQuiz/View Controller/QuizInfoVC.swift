@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 class QuizInfoVC: UIViewController {
-    public static var quiz = QuizEntity()
+//    public static var quiz = QuizEntity.sharedInstance
     
     @IBOutlet weak var quizTitle: UITextField!
     @IBOutlet weak var duration: UITextField!
@@ -24,8 +24,14 @@ class QuizInfoVC: UIViewController {
         var title = quizTitle.text;
         var totalDuration = Int(duration.text!) ?? 10;
         var code = enterCode.text;
-        
         var userID = Auth.auth().currentUser?.uid
+        
+        // Fill the entity
+        QuizEntity.getInstance().title = title!
+        QuizEntity.getInstance().duration = totalDuration
+        QuizEntity.getInstance().enterCode = code!
+        QuizEntity.getInstance().teacherID = userID!
+        
     }
     
 }

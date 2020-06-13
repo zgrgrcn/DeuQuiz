@@ -27,8 +27,6 @@ class ViewController: UIViewController {
             }
         }
 
-
-
     }
     
     func transitionToHome(){
@@ -42,10 +40,6 @@ class ViewController: UIViewController {
             let nextViewController = storyBoard.instantiateViewController(withIdentifier: "SHomeVC") as! SHomeViewController
             self.show(nextViewController, sender: nil)
         }
-
-      
-      
-      
     }
     func setUpElement() {
         // Style the elements

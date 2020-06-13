@@ -10,11 +10,26 @@ import UIKit
 
 class QuizEntity {
     
-    init() {
-        
+     private init() { }
+    
+     private static var quiz: QuizEntity = {
+         let instance = QuizEntity()
+         // setup code
+         return instance
+     }()
+    
+    class func getInstance() -> QuizEntity{
+        return quiz
     }
     
-    var name = ""
+    class func addNewQuestion(option1:String, option2:String, option3:String, option4:String,
+                              correct:String, questionText:String)
+    {
+        self.getInstance().questions.append(QuestionEntity(option1: option1, option2: option2, option3: option3, option4: option4,
+                                                           correct: correct, questionText:questionText))
+    }
+    
+    var title = ""
     var isDone = false
     var createdDate = Date(timeIntervalSince1970: Date().timeIntervalSince1970)
     var teacherID = ""

@@ -52,6 +52,22 @@ class MakeQuizVC: UIViewController {
     
     @IBAction func nextQuestionTap(_ sender: Any) {
         
+        var correctOption = "1"
+        
+        if radioButton1.isSelected {
+            correctOption = "1"
+        }else if radioButton2.isSelected{
+            correctOption = "2"
+        }else if radioButton3.isSelected{
+            correctOption = "3"
+        }else if radioButton4.isSelected{
+            correctOption = "4"
+        }
+        
+        QuizEntity.addNewQuestion(option1: txtOption1.text!, option2: txtOption2.text!, option3: txtOption3.text!, option4: txtOption4.text!, correct: correctOption, questionText: txtQuestion.text)
+        
+        var entity = QuizEntity.getInstance().questions
+        
         txtQuestion.text = ""
         txtOption1.text = ""
         txtOption2.text = ""
