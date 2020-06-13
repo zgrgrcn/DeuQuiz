@@ -439,6 +439,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Next Question"/>
+                                        <connections>
+                                            <action selector="nextQuestionTap:" destination="kOc-c0-Mh9" eventType="touchUpInside" id="bcu-hH-dyW"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FWB-xh-yuE">
                                         <rect key="frame" x="0.0" y="626" width="350" height="50"/>
@@ -471,6 +474,11 @@
                         <outlet property="radioButton2" destination="hip-M8-vb5" id="PNl-vV-6KJ"/>
                         <outlet property="radioButton3" destination="ImX-vG-GQF" id="XzK-kD-ZWx"/>
                         <outlet property="radioButton4" destination="LWQ-bR-Wvb" id="yex-W5-6ds"/>
+                        <outlet property="txtOption1" destination="i74-td-3Gh" id="PXj-Rh-gh5"/>
+                        <outlet property="txtOption2" destination="WAb-D3-ef0" id="aUD-D0-mWR"/>
+                        <outlet property="txtOption3" destination="ZnL-X0-dKX" id="wd5-vx-VQm"/>
+                        <outlet property="txtOption4" destination="ZnL-X0-dKX" id="cxx-b1-elE"/>
+                        <outlet property="txtQuestion" destination="iKo-BY-n74" id="57o-wr-S6c"/>
                     </connections>
                 </viewController>
             </objects>
