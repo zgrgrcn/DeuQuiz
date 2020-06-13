@@ -22,6 +22,8 @@
 		84EE792C24196F5D00F1CD2B /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE792B24196F5D00F1CD2B /* Utilities.swift */; };
 		E04DF36F249536AA00F1702E /* MakeQuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04DF36E249536AA00F1702E /* MakeQuizVC.swift */; };
 		E04DF371249543A800F1702E /* QuizInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04DF370249543A800F1702E /* QuizInfoVC.swift */; };
+		E04DF3732495501A00F1702E /* QuizEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04DF3722495501A00F1702E /* QuizEntity.swift */; };
+		E04DF3752495523E00F1702E /* QuestionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04DF3742495523E00F1702E /* QuestionEntity.swift */; };
 		FCA17C252E383DBB82E5B589 /* Pods_DeuQuiz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D458CB0761FAB482403B28A3 /* Pods_DeuQuiz.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +48,8 @@
 		D458CB0761FAB482403B28A3 /* Pods_DeuQuiz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeuQuiz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E04DF36E249536AA00F1702E /* MakeQuizVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeQuizVC.swift; sourceTree = "<group>"; };
 		E04DF370249543A800F1702E /* QuizInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizInfoVC.swift; sourceTree = "<group>"; };
+		E04DF3722495501A00F1702E /* QuizEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizEntity.swift; sourceTree = "<group>"; };
+		E04DF3742495523E00F1702E /* QuestionEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,8 @@
 				84A7C0092484292D00501F9E /* THomeViewController.swift */,
 				E04DF36E249536AA00F1702E /* MakeQuizVC.swift */,
 				E04DF370249543A800F1702E /* QuizInfoVC.swift */,
+				E04DF3722495501A00F1702E /* QuizEntity.swift */,
+				E04DF3742495523E00F1702E /* QuestionEntity.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -259,11 +265,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E04DF371249543A800F1702E /* QuizInfoVC.swift in Sources */,
+				E04DF3732495501A00F1702E /* QuizEntity.swift in Sources */,
 				844A5B7724195B940051F7BE /* ViewController.swift in Sources */,
 				844A5B7324195B940051F7BE /* AppDelegate.swift in Sources */,
 				84EE792C24196F5D00F1CD2B /* Utilities.swift in Sources */,
 				84EE792524195F7900F1CD2B /* SignUpViewController.swift in Sources */,
 				84A7C00A2484292D00501F9E /* THomeViewController.swift in Sources */,
+				E04DF3752495523E00F1702E /* QuestionEntity.swift in Sources */,
 				84EE792724195FA000F1CD2B /* LoginViewController.swift in Sources */,
 				844A5B7524195B940051F7BE /* SceneDelegate.swift in Sources */,
 				84EE792924195FBD00F1CD2B /* SHomeViewController.swift in Sources */,

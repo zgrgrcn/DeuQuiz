@@ -9,5 +9,19 @@
 import UIKit
 
 class QuizInfoVC: UIViewController {
+    public static var quiz = QuizEntity()
+    
+    @IBOutlet weak var quizTitle: UITextField!
+    @IBOutlet weak var duration: UITextField!
+    @IBOutlet weak var enterCode: UITextField!
+    
+    override func viewDidLoad() {
+    }
+    
+    @IBAction func btnMakeQuiz(_ sender: Any) {
+        var title = quizTitle.text;
+        var totalDuration = Int(duration.text!) ?? 10;
+        var code = enterCode.text;
+    }
     
 }

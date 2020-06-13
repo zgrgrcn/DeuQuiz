@@ -51,6 +51,7 @@ class MakeQuizVC: UIViewController {
     }
     
     @IBAction func nextQuestionTap(_ sender: Any) {
+        
         txtQuestion.text = ""
         txtOption1.text = ""
         txtOption2.text = ""
