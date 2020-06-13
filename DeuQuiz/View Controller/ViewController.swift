@@ -30,10 +30,6 @@ class ViewController: UIViewController {
 
 
     }
-
-    @IBAction func test(_ sender: Any) {
-        
-    }
     
     func transitionToHome(){
 //        let nextViewController = storyboard?.instantiateViewController(withIdentifier: "SHomeVC") as? SHomeViewController
