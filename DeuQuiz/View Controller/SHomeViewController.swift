@@ -7,16 +7,29 @@
 //
 
 import UIKit
+import Firebase
 
 class SHomeViewController: UIViewController {
 
-    override func viewDidLoad() {
+  @IBOutlet weak var signOut: UIButton!
+  override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+  @IBAction func signOut(_ sender: Any) {
+    let firebaseAuth = Auth.auth()
+    do {
+      try firebaseAuth.signOut()
+      let homeViewController = self.storyboard?.instantiateViewController(identifier: "HomeVC") as? ViewController
+      self.view.window?.rootViewController = homeViewController
+      self.view.window?.makeKeyAndVisible()
+    } catch let signOutError as NSError {
+      print ("Error signing out: %@", signOutError)
+    }
+  }
+  
     /*
     // MARK: - Navigation
 
