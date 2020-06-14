@@ -10,14 +10,8 @@ import UIKit
 
 class QuestionEntity {
 
-    enum QuestionType {
-        case SINGULAR
-        case MULTIPLE
-        case TF
-    }
-
     init(order:Int,option1:String, option2:String, option3:String, option4:String,
-         correct:String, questionText:String) {
+         correct:String, questionText:String, type:String) {
         self.order=order
         self.option1 = option1
         self.option2 = option2
@@ -25,6 +19,7 @@ class QuestionEntity {
         self.option4 = option4
         self.correctAnswer = correct
         self.questionText = questionText
+        self.type = type
     }
     
     var questionText = ""
@@ -36,7 +31,7 @@ class QuestionEntity {
     
     var correctAnswer = "1"
     
-    var type = QuestionType.SINGULAR
+    var type = "S" // S, M, TF
     
 
 }

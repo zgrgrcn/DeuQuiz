@@ -23,10 +23,10 @@ class QuizEntity {
     }
     
     class func addNewQuestion(order: Int, option1:String, option2:String, option3:String, option4:String,
-                              correct:String, questionText:String)
+                              correct:String, questionText:String, type:String)
     {
         self.getInstance().questions.append(QuestionEntity(order:order,option1: option1, option2: option2, option3: option3, option4: option4,
-                                                           correct: correct, questionText:questionText))
+                                                           correct: correct, questionText:questionText, type: type))
     }
     
     var title = ""

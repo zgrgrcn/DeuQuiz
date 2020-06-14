@@ -23,9 +23,11 @@ class MakeQuizVC: UIViewController {
     @IBOutlet weak var txtOpt3: UITextField!
     
     @IBOutlet weak var questionCounter: UILabel!
-
+    
     override func viewDidLoad() {
+        super.viewDidLoad()
         radioButton1.isSelected = true
+        questionCounter.text = String(QuizEntity.getInstance().questions.count+1)
     }
 
     @IBAction func radioButtonSwitch(_ sender: UIButton) {
@@ -80,8 +82,10 @@ class MakeQuizVC: UIViewController {
             } else if radioButton4.isSelected {
                 correctOption = "4"
             }
+            
+            
 
-            QuizEntity.addNewQuestion(order: Int(questionCounter.text!)!,option1: txtOption1.text!, option2: txtOption2.text!, option3: txtOpt3.text!, option4: txtOption4.text!, correct: correctOption, questionText: txtQuestion.text)
+            QuizEntity.addNewQuestion(order: Int(questionCounter.text!)!,option1: txtOption1.text!, option2: txtOption2.text!, option3: txtOpt3.text!, option4: txtOption4.text!, correct: correctOption, questionText: txtQuestion.text, type: "M")
 
             clearInputs()
             clearRadioButtons()
@@ -142,7 +146,6 @@ class MakeQuizVC: UIViewController {
             for question in QuizEntity.getInstance().questions {
                 let questiosRef = myQuizRef.collection("questions")
 
-
                 questiosRef.addDocument(data: [
                     "correct": question.correctAnswer,
                     "option1": question.option1,
@@ -150,7 +153,8 @@ class MakeQuizVC: UIViewController {
                     "option3": question.option3,
                     "option4": question.option4,
                     "question": question.questionText,
-                    "order": question.order
+                    "order": question.order,
+                    "type": question.type
                 ]) { err in
                     if let err = err {
                         print("Error adding question data to questios: \(err)")

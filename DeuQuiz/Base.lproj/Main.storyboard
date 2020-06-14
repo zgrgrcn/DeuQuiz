@@ -869,6 +869,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Save and Next"/>
                                         <connections>
+                                            <action selector="nextQuestionTap:" destination="Oar-0Y-O9c" eventType="touchUpInside" id="7TE-qz-e5b"/>
                                             <action selector="nextQuestionTap:" destination="kOc-c0-Mh9" eventType="touchUpInside" id="AgE-9z-oDS"/>
                                         </connections>
                                     </button>
@@ -881,6 +882,7 @@
                                         <state key="normal" title="Finish Quiz"/>
                                         <connections>
                                             <action selector="finishQuiz:" destination="kOc-c0-Mh9" eventType="touchUpInside" id="0ch-kf-1gg"/>
+                                            <action selector="finishQuiz:" destination="Oar-0Y-O9c" eventType="touchUpInside" id="0fr-Ns-XTz"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -906,6 +908,12 @@
                         <outlet property="option2" destination="ytK-X3-vX8" id="4ya-fT-Pgq"/>
                         <outlet property="option3" destination="aAB-VS-63d" id="ESE-K5-mbN"/>
                         <outlet property="option4" destination="NJ5-Hp-Z4a" id="b9s-CT-lB9"/>
+                        <outlet property="questionCounter" destination="rtS-Io-Ikf" id="XZf-Yc-t00"/>
+                        <outlet property="txtOpt3" destination="m3d-fa-cii" id="uc2-gM-HsZ"/>
+                        <outlet property="txtOption1" destination="cVe-6W-zau" id="4jm-i9-0Nb"/>
+                        <outlet property="txtOption2" destination="wQQ-tu-JSC" id="885-s7-rCp"/>
+                        <outlet property="txtOption4" destination="eCm-Zd-rKh" id="wKD-jP-5Uv"/>
+                        <outlet property="txtQuestion" destination="7OX-QI-Awq" id="Rwi-gf-cda"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0dq-ac-FmY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1094,23 +1102,39 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="354" height="91"/>
                                                         <subviews>
                                                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKu-Ay-79i" userLabel="Option1">
-                                                                <rect key="frame" x="5" y="5" width="20" height="20"/>
+                                                                <rect key="frame" x="13" y="12" width="43" height="43"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                                 <state key="normal" image="radio-unchecked"/>
                                                                 <state key="selected" image="radio-checked"/>
                                                                 <connections>
-                                                                    <action selector="radioButtonSwitch:" destination="kOc-c0-Mh9" eventType="touchUpInside" id="CZq-kL-tRc"/>
+                                                                    <action selector="radioButtonSwitch:" destination="2oO-xv-hUq" eventType="touchUpInside" id="9pn-KU-Leq"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnr-WP-NvW" userLabel="Option2">
-                                                                <rect key="frame" x="238" y="5" width="20" height="20"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="True" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnD-Ue-hsd">
+                                                                <rect key="frame" x="64" y="8" width="78" height="51"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kP6-RL-VK0" userLabel="Option2">
+                                                                <rect key="frame" x="183" y="12" width="43" height="43"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                                 <state key="normal" image="radio-unchecked"/>
                                                                 <state key="selected" image="radio-checked"/>
                                                                 <connections>
-                                                                    <action selector="radioButtonSwitch:" destination="kOc-c0-Mh9" eventType="touchUpInside" id="uEr-UO-8ZG"/>
+                                                                    <action selector="radioButtonSwitch:" destination="2oO-xv-hUq" eventType="touchUpInside" id="Ni0-XK-l9O"/>
                                                                 </connections>
                                                             </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="False" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Rv-Zc-pPQ">
+                                                                <rect key="frame" x="243" y="8" width="94" height="51"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     </view>
@@ -1127,6 +1151,7 @@
                                         <state key="normal" title="Save and Next"/>
                                         <connections>
                                             <action selector="nextQuestionTap:" destination="kOc-c0-Mh9" eventType="touchUpInside" id="DSC-Rm-xZu"/>
+                                            <action selector="nextQuestionTap:" destination="2oO-xv-hUq" eventType="touchUpInside" id="ZVN-FZ-hej"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="thy-he-wLD">
@@ -1138,6 +1163,7 @@
                                         <state key="normal" title="Finish Quiz"/>
                                         <connections>
                                             <action selector="finishQuiz:" destination="kOc-c0-Mh9" eventType="touchUpInside" id="etY-5L-Axm"/>
+                                            <action selector="finishQuiz:" destination="2oO-xv-hUq" eventType="touchUpInside" id="jCe-hB-lPo"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1158,16 +1184,22 @@
                         <viewLayoutGuide key="safeArea" id="jch-YK-x2n"/>
                     </view>
                     <navigationItem key="navigationItem" id="ULm-pz-vvn"/>
+                    <connections>
+                        <outlet property="questionCounter" destination="Jqi-PW-8cv" id="Wfr-58-qSr"/>
+                        <outlet property="radioButton1" destination="SKu-Ay-79i" id="3YA-Bp-gZq"/>
+                        <outlet property="radioButton2" destination="kP6-RL-VK0" id="G4p-d6-ARR"/>
+                        <outlet property="txtQuestion" destination="rBl-0L-7cE" id="RPJ-qQ-HC5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mwe-KE-Raw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2471" y="1783"/>
+            <point key="canvasLocation" x="2469.5652173913045" y="1782.5892857142856"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="IXs-5K-Bvd"/>
-        <segue reference="9bI-YW-utE"/>
-        <segue reference="lAd-MJ-OlU"/>
+        <segue reference="atz-kv-mqg"/>
+        <segue reference="S9s-0D-3fD"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="blank-check-box" width="512" height="512"/>
