@@ -55,9 +55,12 @@ class MakeQuizVC: UIViewController {
 
     @IBAction func nextQuestionTap(_ sender: Any) {
 
-        let isInputsProper = txtOption1.text!.count > 0 && txtOption2.text!.count > 0 && txtOption3.text!.count > 0 && txtOption4.text!.count > 0 && txtQuestion.text!.count > 0
+        saveQuestion()
+    }
+    
+    func saveQuestion(){
 
-        if !isInputsProper {
+        if !isInputProper() {
             // create the alert
             let alert = UIAlertController(title: "Warning!", message: "Please fill the inputs properly.", preferredStyle: UIAlertController.Style.alert)
             // add an action (button)
@@ -80,13 +83,7 @@ class MakeQuizVC: UIViewController {
 
             QuizEntity.addNewQuestion(order: Int(questionCounter.text!)!,option1: txtOption1.text!, option2: txtOption2.text!, option3: txtOption3.text!, option4: txtOption4.text!, correct: correctOption, questionText: txtQuestion.text)
 
-            var entity = QuizEntity.getInstance().questions
-
-            txtQuestion.text = ""
-            txtOption1.text = ""
-            txtOption2.text = ""
-            txtOption3.text = ""
-            txtOption4.text = ""
+            emptyInputs()
 
             clearRadioButtons()
             radioButton1.isSelected = true
@@ -95,56 +92,80 @@ class MakeQuizVC: UIViewController {
         }
     }
 
+    func emptyInputs(){
+        txtQuestion.text = ""
+        txtOption1.text = ""
+        txtOption2.text = ""
+        txtOption3.text = ""
+        txtOption4.text = ""
+    }
+    
+    func isInputProper() -> Bool
+    {
+        return txtOption1.text!.count > 0 && txtOption2.text!.count > 0 && txtOption3.text!.count > 0 && txtOption4.text!.count > 0 && txtQuestion.text!.count > 0
+    }
+    
     func increaseQuestionCounter() {
         let x = Int(questionCounter.text!)! + 1
         questionCounter.text = String(x)
     }
 
     @IBAction func finishQuiz(_ sender: Any) {
-        QuizEntity.getInstance()
+        
+        if isInputProper() {
+            
+            // First, save the current question, if it is proper.
+            saveQuestion()
 
-        let db = Firestore.firestore()
-        let myQuizRef = db.collection("quiz").document(QuizEntity.getInstance().enterCode)
+        
+            let db = Firestore.firestore()
+            let myQuizRef = db.collection("quiz").document(QuizEntity.getInstance().enterCode)
 
-        QuizEntity.getInstance().createdDate=Date(timeIntervalSince1970: Date().timeIntervalSince1970)
+            QuizEntity.getInstance().createdDate=Date(timeIntervalSince1970: Date().timeIntervalSince1970)
 
-        myQuizRef.setData([
-            "createdDate": QuizEntity.getInstance().createdDate,
-            "duration": QuizEntity.getInstance().duration,
-            "isDone": "False",
-            "quizName": QuizEntity.getInstance().title,
-            "teacherID": QuizEntity.getInstance().teacherID
-        ]) { err in
-            if let err = err {
-                print("Error creating quiz: \(err)")
-            } else {
-                print("Quiz successfully created!")
-            }
-        }
-
-
-        var index = 0
-        for question in QuizEntity.getInstance().questions {
-            let questiosRef = myQuizRef.collection("questios")
-
-
-            questiosRef.addDocument(data: [
-                "correct": question.correctAnswer,
-                "option1": question.option1,
-                "option2": question.option2,
-                "option3": question.option3,
-                "option4": question.option4,
-                "question": question.questionText,
-                "order": question.order
+            myQuizRef.setData([
+                "createdDate": QuizEntity.getInstance().createdDate,
+                "duration": QuizEntity.getInstance().duration,
+                "isDone": "False",
+                "quizName": QuizEntity.getInstance().title,
+                "teacherID": QuizEntity.getInstance().teacherID
             ]) { err in
                 if let err = err {
-                    print("Error adding question data to questios: \(err)")
+                    print("Error creating quiz: \(err)")
+                } else {
+                    print("Quiz successfully created!")
                 }
             }
-            print("added to question")
-            index += 1
+
+
+            var index = 0
+            for question in QuizEntity.getInstance().questions {
+                let questiosRef = myQuizRef.collection("questions")
+
+
+                questiosRef.addDocument(data: [
+                    "correct": question.correctAnswer,
+                    "option1": question.option1,
+                    "option2": question.option2,
+                    "option3": question.option3,
+                    "option4": question.option4,
+                    "question": question.questionText,
+                    "order": question.order
+                ]) { err in
+                    if let err = err {
+                        print("Error adding question data to questios: \(err)")
+                    }
+                }
+                print("added to question")
+                index += 1
+            }
+        }else{
+            // create the alert
+             let alert = UIAlertController(title: "Warning!", message: "Please fill the inputs properly.", preferredStyle: UIAlertController.Style.alert)
+             // add an action (button)
+             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+             // show the alert
+             self.present(alert, animated: true, completion: nil)
         }
     }
-
-
 }
