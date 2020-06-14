@@ -19,9 +19,9 @@ class MakeQuizVC: UIViewController {
 
     @IBOutlet weak var txtOption1: UITextField!
     @IBOutlet weak var txtOption2: UITextField!
-    @IBOutlet weak var txtOption3: UITextField!
     @IBOutlet weak var txtOption4: UITextField!
-
+    @IBOutlet weak var txtOpt3: UITextField!
+    
     @IBOutlet weak var questionCounter: UILabel!
 
     override func viewDidLoad() {
@@ -81,28 +81,28 @@ class MakeQuizVC: UIViewController {
                 correctOption = "4"
             }
 
-            QuizEntity.addNewQuestion(order: Int(questionCounter.text!)!,option1: txtOption1.text!, option2: txtOption2.text!, option3: txtOption3.text!, option4: txtOption4.text!, correct: correctOption, questionText: txtQuestion.text)
+            QuizEntity.addNewQuestion(order: Int(questionCounter.text!)!,option1: txtOption1.text!, option2: txtOption2.text!, option3: txtOpt3.text!, option4: txtOption4.text!, correct: correctOption, questionText: txtQuestion.text)
 
-            emptyInputs()
-
+            clearInputs()
             clearRadioButtons()
+            
             radioButton1.isSelected = true
 
             increaseQuestionCounter()
         }
     }
 
-    func emptyInputs(){
+    func clearInputs(){
         txtQuestion.text = ""
         txtOption1.text = ""
         txtOption2.text = ""
-        txtOption3.text = ""
+        txtOpt3.text = ""
         txtOption4.text = ""
     }
     
     func isInputProper() -> Bool
     {
-        return txtOption1.text!.count > 0 && txtOption2.text!.count > 0 && txtOption3.text!.count > 0 && txtOption4.text!.count > 0 && txtQuestion.text!.count > 0
+        return txtOption1.text!.count > 0 && txtOption2.text!.count > 0 && txtOpt3.text!.count > 0 && txtOption4.text!.count > 0 && txtQuestion.text!.count > 0
     }
     
     func increaseQuestionCounter() {
