@@ -25,6 +25,8 @@
 		E04DF3732495501A00F1702E /* QuizEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04DF3722495501A00F1702E /* QuizEntity.swift */; };
 		E04DF3752495523E00F1702E /* QuestionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04DF3742495523E00F1702E /* QuestionEntity.swift */; };
 		E04DF3772495790F00F1702E /* StudentAnswerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04DF3762495790F00F1702E /* StudentAnswerEntity.swift */; };
+		E0CB149F24964DC8007A8B2C /* MultiChoiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CB149E24964DC8007A8B2C /* MultiChoiceVC.swift */; };
+		E0CB14A124964E6D007A8B2C /* SingleChoiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CB14A024964E6D007A8B2C /* SingleChoiceVC.swift */; };
 		FCA17C252E383DBB82E5B589 /* Pods_DeuQuiz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D458CB0761FAB482403B28A3 /* Pods_DeuQuiz.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +54,8 @@
 		E04DF3722495501A00F1702E /* QuizEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizEntity.swift; sourceTree = "<group>"; };
 		E04DF3742495523E00F1702E /* QuestionEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionEntity.swift; sourceTree = "<group>"; };
 		E04DF3762495790F00F1702E /* StudentAnswerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentAnswerEntity.swift; sourceTree = "<group>"; };
+		E0CB149E24964DC8007A8B2C /* MultiChoiceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiChoiceVC.swift; sourceTree = "<group>"; };
+		E0CB14A024964E6D007A8B2C /* SingleChoiceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleChoiceVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +125,8 @@
 				E04DF3722495501A00F1702E /* QuizEntity.swift */,
 				E04DF3742495523E00F1702E /* QuestionEntity.swift */,
 				E04DF3762495790F00F1702E /* StudentAnswerEntity.swift */,
+				E0CB149E24964DC8007A8B2C /* MultiChoiceVC.swift */,
+				E0CB14A024964E6D007A8B2C /* SingleChoiceVC.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -270,7 +276,9 @@
 				E04DF371249543A800F1702E /* QuizInfoVC.swift in Sources */,
 				E04DF3732495501A00F1702E /* QuizEntity.swift in Sources */,
 				844A5B7724195B940051F7BE /* ViewController.swift in Sources */,
+				E0CB149F24964DC8007A8B2C /* MultiChoiceVC.swift in Sources */,
 				844A5B7324195B940051F7BE /* AppDelegate.swift in Sources */,
+				E0CB14A124964E6D007A8B2C /* SingleChoiceVC.swift in Sources */,
 				84EE792C24196F5D00F1CD2B /* Utilities.swift in Sources */,
 				84EE792524195F7900F1CD2B /* SignUpViewController.swift in Sources */,
 				E04DF3772495790F00F1702E /* StudentAnswerEntity.swift in Sources */,
