@@ -9,36 +9,20 @@
 import UIKit
 import Firebase
 
-struct Question {
-    let text: String
-    let answers: [Answer]
-}
-
-struct Answer {
-    let text: String
-    let correct: Bool // true / false
-}
 
 class SHomeViewController: UIViewController {
 
     @IBOutlet weak var signOut: UIButton!
     @IBOutlet weak var quizCodeText: UITextField!
+    @IBOutlet weak var enterQuizButton: UIButton!
 
-    var questionModels = [Question]();
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setUpElement()
+        //      StudentAnswerEntity.getInstance()
     }
 
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-//    {
-//        if segue.destination is QuizViewController
-//        {
-//            let vc = segue.destination as? QuizViewController
-//            vc?.questionModels = questionModels
-//        }
-//    }
 
     @IBAction func signOut(_ sender: Any) {
         let firebaseAuth = Auth.auth()
@@ -64,12 +48,12 @@ class SHomeViewController: UIViewController {
                 // Add me to participants
                 self.addMeToParticipants(quizRef: myQuizRef)
 
+                // Take quiz metadata
+                self.takeQuizMetadata(quizRef: myQuizRef)
 
-                // Take the questions
-                self.takeTheQuestions(quizRef: myQuizRef)
-                
-                
-                self.goToQuiz()
+                // Take the questions and start the quiz
+                self.takeTheQuestionsAndGoToQuiz(quizRef: myQuizRef)
+
 
             } else {
                 print("Quiz does not exist")
@@ -79,28 +63,58 @@ class SHomeViewController: UIViewController {
 
     }
 
-    private func goToQuiz() {
+    private func takeQuizMetadata(quizRef: DocumentReference) {
+        quizRef.getDocument() { (document, error) in
+            if let document = document, document.exists {
+                QuizEntity.getInstance().isDone = ((document.data()!["isDone"] as! String) as NSString).boolValue
+                QuizEntity.getInstance().duration = document.data()!["duration"] as! Int
+                QuizEntity.getInstance().teacherID = document.data()!["teacherID"] as! String
+                QuizEntity.getInstance().title = document.data()!["quizName"] as! String
+                //QuizEntity.getInstance().createdDate = document.data()!["createdDate"] as! Timestamp  // as! Date de olmadi //TODO: bunu cozemedim
+            } else {
+                print("Document does not exist")
+            }
+        }
+    }
 
-//        questionModels
+    private func goToQuiz() {
+        // TODO:delete these comments
+        //sorulari gostermeye baslayabiliriz ancak asenkron calistigi icin sorularin tamamini almadan diger sayfa gozukebilir???
+        QuizEntity.getInstance().questions = QuizEntity.getInstance().questions.sorted(by: { $0.order < $1.order }) // Bunu bulana kadar canim cikti lol
+        var target = "SingleQuizViewVC"
+        if QuizEntity.getInstance().questions[0].type == "TF" {
+            target = "TFQuizViewVC"
+        }
+        if QuizEntity.getInstance().questions[0].type == "M" {
+            target = "MultiQuizViewVC"
+        }
+
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: target) as! QuizViewVC
+        self.show(nextViewController, sender: nil)
     }
 
 // enterToQuiz - HELPER
-    private func takeTheQuestions(quizRef myQuizRef: DocumentReference) {
+    private func takeTheQuestionsAndGoToQuiz(quizRef myQuizRef: DocumentReference) {
         let questionRef = myQuizRef.collection("questions")
         questionRef.getDocuments() { (questions, err) in
             if let err = err {
                 print("Error getting questions: \(err)")
             } else {
                 for question in questions!.documents {
-                    //print("\(question.documentID) => \(question.data())")
-                    self.questionModels.append(Question(text: question.documentID + ") " + (question.data()["question"] as! String), answers: [
-                        Answer(text: question.data()["option1"] as! String, correct: (question.data()["correct"] as! String)=="option1"),
-                        Answer(text: question.data()["option2"] as! String, correct: (question.data()["correct"] as! String)=="option2"),
-                        Answer(text: question.data()["option3"] as! String, correct: (question.data()["correct"] as! String)=="option3"),
-                        Answer(text: question.data()["option4"] as! String, correct: (question.data()["correct"] as! String)=="option4")
-                    ]))
+                    print("\(question.documentID) => \(question.data())")
+                    QuizEntity.addNewQuestion(
+                            order: question.data()["order"]! as! Int,
+                            option1: question.data()["option1"]! as! String, option2: question.data()["option2"]! as! String, option3: question.data()["option3"]! as! String, option4: question.data()["option4"]! as! String,
+                            correct: question.data()["correct"]! as! String,
+                            questionText: question.data()["question"]! as! String,
+                            type: question.data()["type"]! as! String
+                    )
+
+
                 }
-                //print("questionModels: ",self.questionModels)
+
+                self.goToQuiz()//belki bunu go to quiz yerine go to loby felan yapariz bilmiyorum
             }
 
         }
@@ -120,5 +134,12 @@ class SHomeViewController: UIViewController {
         }
         print("added to participants")
     }
+
+    private func setUpElement() {
+        // Style the elements
+        Utilities.styleFilledButton(enterQuizButton)
+    }
 }
+
+
 
