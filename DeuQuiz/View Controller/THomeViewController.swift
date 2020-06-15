@@ -16,18 +16,18 @@ class THomeViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
-    
+
+
     @IBAction func logoutButton(_ sender: Any) {
         let firebaseAuth = Auth.auth()
-           do {
-               try firebaseAuth.signOut()
-               let homeViewController = self.storyboard?.instantiateViewController(identifier: "HomeVC") as? ViewController
-               self.view.window?.rootViewController = homeViewController
-               self.view.window?.makeKeyAndVisible()
-           } catch let signOutError as NSError {
-               print("Error signing out: %@", signOutError)
-           }
+        do {
+            try firebaseAuth.signOut()
+            let homeViewController = self.storyboard?.instantiateViewController(identifier: "HomeVC") as? ViewController
+            self.view.window?.rootViewController = homeViewController
+            self.view.window?.makeKeyAndVisible()
+        } catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+        }
     }
-    
+
 }

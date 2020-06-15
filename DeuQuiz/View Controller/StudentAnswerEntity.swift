@@ -30,7 +30,7 @@ class StudentAnswerEntity {
     var quizID = ""
     var studentID = ""
     var remainingTime = 10
-    
+    var currentQuestionOrder = 1 //hangi soruyu cevapladigimi bilmek icin
     var answers = [String]()
 
 }
