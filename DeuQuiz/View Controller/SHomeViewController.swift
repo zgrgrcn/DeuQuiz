@@ -15,10 +15,16 @@ class SHomeViewController: UIViewController {
     @IBOutlet weak var signOut: UIButton!
     @IBOutlet weak var quizCodeText: UITextField!
     @IBOutlet weak var enterQuizButton: UIButton!
-
-
+    @IBOutlet weak var quizTableView: UITableView!
+    
+    let fakeQuizNames = ["DOM","OPSYS","DATACOM"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        quizTableView.delegate = self
+        quizTableView.dataSource = self
+        
         setUpElement()
         //      StudentAnswerEntity.getInstance()
     }
@@ -36,7 +42,26 @@ class SHomeViewController: UIViewController {
         }
     }
 
-    @IBAction func enterToQuiz(_ sender: Any) {
+    
+    func showActivityIndicator() {
+        
+        var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView(style: .gray)
+        
+        activityIndicator.center = self.view.center
+        activityIndicator.transform = CGAffineTransform(scaleX: 3, y: 3)
+        activityIndicator.hidesWhenStopped = true
+        view.addSubview(activityIndicator)
+        
+        activityIndicator.startAnimating()
+        
+    }
+    
+    @IBAction func enterToQuiz(_ sender: UIButton) {
+        
+        sender.isEnabled = false
+        
+        showActivityIndicator()
+        
         let db = Firestore.firestore()
         let myQuizRef = db.collection("quiz").document(quizCodeText.text!)
 
@@ -141,5 +166,32 @@ class SHomeViewController: UIViewController {
     }
 }
 
+extension SHomeViewController: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let cell = tableView.cellForRow(at: indexPath)
+        
+        let text = cell?.textLabel?.text
+        
+        print(text)
+    }
+}
 
-
+extension SHomeViewController: UITableViewDataSource{
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return fakeQuizNames.count // There are three rows
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
+        cell.textLabel?.text = fakeQuizNames[indexPath.row]
+        
+        return cell
+    }
+}

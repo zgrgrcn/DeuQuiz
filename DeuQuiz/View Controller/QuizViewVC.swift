@@ -139,7 +139,7 @@ class QuizViewVC: UIViewController {
 
     @IBAction func trueFalseSwitch(_ sender: UIButton) {
         
-        if currentPage == "TFQuizViewVC" {
+        if getCurrentPageType() == "TFQuizViewVC" {
             
             trueButton.isSelected = false
             falseButton.isSelected = false
@@ -153,5 +153,17 @@ class QuizViewVC: UIViewController {
             sender.isSelected = !sender.isSelected
         }
     }
+    
+    @IBAction func radioButtonSwitch(_ sender: UIButton) {
+        if currentPage == "SingleQuizViewVC" {
+            radioButton1.isSelected = false
+            radioButton2.isSelected = false
+            radioButton3.isSelected = false
+            radioButton4.isSelected = false
+            
+            sender.isSelected = true
+        }
+    }
+    
     
 }
