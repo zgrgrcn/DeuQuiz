@@ -28,9 +28,6 @@
 		E04CD76A249E9A0300BB4EE0 /* AllQuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04CD769249E9A0300BB4EE0 /* AllQuizVC.swift */; };
 		E04DF36F249536AA00F1702E /* SingleChoiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04DF36E249536AA00F1702E /* SingleChoiceVC.swift */; };
 		E04DF371249543A800F1702E /* QuizInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04DF370249543A800F1702E /* QuizInfoVC.swift */; };
-		E0855B48249F6EA20036BACF /* QuizSingleChoiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0855B47249F6EA20036BACF /* QuizSingleChoiceVC.swift */; };
-		E0855B4A249F6EC10036BACF /* QuizMultiChoiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0855B49249F6EC10036BACF /* QuizMultiChoiceVC.swift */; };
-		E0855B4C249F6EF10036BACF /* QuizTrueFalseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0855B4B249F6EF10036BACF /* QuizTrueFalseVC.swift */; };
 		E0CB149F24964DC8007A8B2C /* MultiChoiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CB149E24964DC8007A8B2C /* MultiChoiceVC.swift */; };
 		E0CB14A124964E6D007A8B2C /* TrueFalseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CB14A024964E6D007A8B2C /* TrueFalseVC.swift */; };
 		FCA17C252E383DBB82E5B589 /* Pods_DeuQuiz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D458CB0761FAB482403B28A3 /* Pods_DeuQuiz.framework */; };
@@ -63,9 +60,6 @@
 		E04CD769249E9A0300BB4EE0 /* AllQuizVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllQuizVC.swift; sourceTree = "<group>"; };
 		E04DF36E249536AA00F1702E /* SingleChoiceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleChoiceVC.swift; sourceTree = "<group>"; };
 		E04DF370249543A800F1702E /* QuizInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizInfoVC.swift; sourceTree = "<group>"; };
-		E0855B47249F6EA20036BACF /* QuizSingleChoiceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSingleChoiceVC.swift; sourceTree = "<group>"; };
-		E0855B49249F6EC10036BACF /* QuizMultiChoiceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizMultiChoiceVC.swift; sourceTree = "<group>"; };
-		E0855B4B249F6EF10036BACF /* QuizTrueFalseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTrueFalseVC.swift; sourceTree = "<group>"; };
 		E0CB149E24964DC8007A8B2C /* MultiChoiceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiChoiceVC.swift; sourceTree = "<group>"; };
 		E0CB14A024964E6D007A8B2C /* TrueFalseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrueFalseVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,9 +133,6 @@
 				84A89DE52496FE58001E54E7 /* QuizViewVC.swift */,
 				E04CD767249E997200BB4EE0 /* StatsVC.swift */,
 				E04CD769249E9A0300BB4EE0 /* AllQuizVC.swift */,
-				E0855B47249F6EA20036BACF /* QuizSingleChoiceVC.swift */,
-				E0855B49249F6EC10036BACF /* QuizMultiChoiceVC.swift */,
-				E0855B4B249F6EF10036BACF /* QuizTrueFalseVC.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -296,13 +287,11 @@
 				E04DF371249543A800F1702E /* QuizInfoVC.swift in Sources */,
 				844A5B7724195B940051F7BE /* ViewController.swift in Sources */,
 				E0CB149F24964DC8007A8B2C /* MultiChoiceVC.swift in Sources */,
-				E0855B4C249F6EF10036BACF /* QuizTrueFalseVC.swift in Sources */,
 				844A5B7324195B940051F7BE /* AppDelegate.swift in Sources */,
 				E0CB14A124964E6D007A8B2C /* TrueFalseVC.swift in Sources */,
 				84EE792C24196F5D00F1CD2B /* Utilities.swift in Sources */,
 				84EE792524195F7900F1CD2B /* SignUpViewController.swift in Sources */,
 				E04CD768249E997200BB4EE0 /* StatsVC.swift in Sources */,
-				E0855B48249F6EA20036BACF /* QuizSingleChoiceVC.swift in Sources */,
 				84A7C00A2484292D00501F9E /* THomeViewController.swift in Sources */,
 				84EE792724195FA000F1CD2B /* LoginViewController.swift in Sources */,
 				844A5B7524195B940051F7BE /* SceneDelegate.swift in Sources */,
@@ -312,7 +301,6 @@
 				58603337AC1A8D4E542D9298 /* QuizEntity.swift in Sources */,
 				586033341D51B4358A4B6808 /* StudentAnswerEntity.swift in Sources */,
 				586037A9D3696D23B0FED5E4 /* QuestionEntity.swift in Sources */,
-				E0855B4A249F6EC10036BACF /* QuizMultiChoiceVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

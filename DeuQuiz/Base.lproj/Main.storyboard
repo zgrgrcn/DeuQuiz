@@ -1537,6 +1537,9 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                         <state key="normal" image="radio-unchecked"/>
                                                         <state key="selected" image="radio-checked"/>
+                                                        <connections>
+                                                            <action selector="trueFalseSwitch:" destination="Irg-Fd-6pl" eventType="touchUpInside" id="6QS-sm-SNo"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="True" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9PF-dH-yE2">
                                                         <rect key="frame" x="64" y="8" width="78" height="51"/>
@@ -1551,6 +1554,9 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                         <state key="normal" image="radio-unchecked"/>
                                                         <state key="selected" image="radio-checked"/>
+                                                        <connections>
+                                                            <action selector="trueFalseSwitch:" destination="Irg-Fd-6pl" eventType="touchUpInside" id="RCC-wc-Hhe"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="False" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIy-GT-6Ir">
                                                         <rect key="frame" x="243" y="8" width="94" height="51"/>
@@ -1613,7 +1619,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QJq-qf-Peg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5787" y="467"/>
+            <point key="canvasLocation" x="5786.9565217391309" y="466.74107142857139"/>
         </scene>
         <!--All QuizVC-->
         <scene sceneID="Jxw-jy-KTZ">
@@ -1647,7 +1653,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Pvf-hC-rEu"/>
+        <segue reference="IXs-5K-Bvd"/>
         <segue reference="atz-kv-mqg"/>
         <segue reference="S9s-0D-3fD"/>
     </inferredMetricsTieBreakers>
