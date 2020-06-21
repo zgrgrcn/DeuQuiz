@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n82-dq-PJk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n82-dq-PJk">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -562,12 +562,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v5e-R5-bbw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3834.7826086956525" y="-216.29464285714286"/>
+            <point key="canvasLocation" x="4455" y="467"/>
         </scene>
-        <!--Make QuizVC-->
+        <!--Single ChoiceVC-->
         <scene sceneID="GFA-xJ-uBm">
             <objects>
-                <viewController id="kOc-c0-Mh9" customClass="MakeQuizVC" customModule="DeuQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kOc-c0-Mh9" customClass="SingleChoiceVC" customModule="DeuQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" ambiguous="YES" id="16b-Mw-pqi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1080,10 +1080,10 @@
             </objects>
             <point key="canvasLocation" x="3061" y="1174"/>
         </scene>
-        <!--Single ChoiceVC-->
+        <!--True FalseVC-->
         <scene sceneID="qcq-4N-Bgz">
             <objects>
-                <viewController id="2oO-xv-hUq" customClass="SingleChoiceVC" customModule="DeuQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2oO-xv-hUq" customClass="TrueFalseVC" customModule="DeuQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xdm-Fc-nd1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1460,7 +1460,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gqq-Oq-Vh3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4501" y="-216"/>
+            <point key="canvasLocation" x="5120" y="467"/>
         </scene>
         <!--Quiz ViewVC-->
         <scene sceneID="9Ut-5x-mfJ">
@@ -1613,18 +1613,48 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QJq-qf-Peg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5167" y="-216"/>
+            <point key="canvasLocation" x="5787" y="467"/>
+        </scene>
+        <!--All QuizVC-->
+        <scene sceneID="Jxw-jy-KTZ">
+            <objects>
+                <viewController id="O4F-mM-SE1" customClass="AllQuizVC" customModule="DeuQuiz" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0dT-Sr-a46">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="gJ1-Ed-3rj"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wai-n0-nvr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4117" y="-216"/>
+        </scene>
+        <!--StatsVC-->
+        <scene sceneID="nex-TI-oet">
+            <objects>
+                <viewController id="wTp-Ml-N9s" customClass="StatsVC" customModule="DeuQuiz" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dAG-fE-MZF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="q8d-BN-brl"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Vm-vY-0og" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5043" y="-216"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Pvf-hC-rEu"/>
+        <segue reference="atz-kv-mqg"/>
+        <segue reference="S9s-0D-3fD"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="blank-check-box" width="512" height="512"/>
         <image name="check-box" width="512" height="512"/>
         <image name="radio-checked" width="512" height="512"/>
         <image name="radio-unchecked" width="512" height="512"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Pvf-hC-rEu"/>
-        <segue reference="9bI-YW-utE"/>
-        <segue reference="lAd-MJ-OlU"/>
-    </inferredMetricsTieBreakers>
 </document>
