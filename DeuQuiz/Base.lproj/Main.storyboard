@@ -1365,7 +1365,7 @@
                                                                 <state key="normal" image="blank-check-box"/>
                                                                 <state key="selected" image="check-box"/>
                                                                 <connections>
-                                                                    <action selector="checkBoxSwitch:" destination="Oar-0Y-O9c" eventType="touchUpInside" id="ijH-T2-G98"/>
+                                                                    <action selector="checkBoxVC:" destination="XwT-qQ-1Jr" eventType="touchUpInside" id="n7T-uN-39y"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8w-o0-nCP" userLabel="Option2">
@@ -1374,8 +1374,7 @@
                                                                 <state key="normal" image="blank-check-box"/>
                                                                 <state key="selected" image="check-box"/>
                                                                 <connections>
-                                                                    <action selector="checkBoxSwitch:" destination="Oar-0Y-O9c" eventType="touchUpInside" id="eDN-fq-ivx"/>
-                                                                    <action selector="radioButtonSwitch:" destination="kOc-c0-Mh9" eventType="touchUpInside" id="knY-HH-QtL"/>
+                                                                    <action selector="checkBoxVC:" destination="XwT-qQ-1Jr" eventType="touchUpInside" id="zbq-jy-QWv"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vyl-fu-gBM" userLabel="Option4">
@@ -1384,8 +1383,7 @@
                                                                 <state key="normal" image="blank-check-box"/>
                                                                 <state key="selected" image="check-box"/>
                                                                 <connections>
-                                                                    <action selector="checkBoxSwitch:" destination="Oar-0Y-O9c" eventType="touchUpInside" id="9kM-zq-RAU"/>
-                                                                    <action selector="radioButtonSwitch:" destination="kOc-c0-Mh9" eventType="touchUpInside" id="uME-Ad-str"/>
+                                                                    <action selector="checkBoxVC:" destination="XwT-qQ-1Jr" eventType="touchUpInside" id="udo-2u-wMQ"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7L-IC-6xA" userLabel="Option3">
@@ -1394,8 +1392,7 @@
                                                                 <state key="normal" image="blank-check-box"/>
                                                                 <state key="selected" image="check-box"/>
                                                                 <connections>
-                                                                    <action selector="checkBoxSwitch:" destination="Oar-0Y-O9c" eventType="touchUpInside" id="VZe-Qv-4gc"/>
-                                                                    <action selector="radioButtonSwitch:" destination="kOc-c0-Mh9" eventType="touchUpInside" id="fNI-KQ-vCh"/>
+                                                                    <action selector="checkBoxVC:" destination="XwT-qQ-1Jr" eventType="touchUpInside" id="6xK-Ce-oPP"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>

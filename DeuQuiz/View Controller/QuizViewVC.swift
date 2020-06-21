@@ -145,8 +145,13 @@ class QuizViewVC: UIViewController {
             falseButton.isSelected = false
             
             sender.isSelected = true
-            
-       
         }
     }
+    
+    @IBAction func checkBoxVC(_ sender: UIButton) {
+        if currentPage == "MultiQuizViewVC" {
+            sender.isSelected = !sender.isSelected
+        }
+    }
+    
 }
