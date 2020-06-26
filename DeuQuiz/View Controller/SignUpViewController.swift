@@ -60,7 +60,8 @@ class SignUpViewController: UIViewController {
                 } else {
                     //User was created successfully, now store the student number and mail
                     let db = Firestore.firestore()
-                    db.collection("students").addDocument(data: [
+
+                    db.collection("students").document(result!.user.uid).setData([
                         "studentNumber": self.studentNumber,
                         "uid": result!.user.uid,
                         "email": self.email,

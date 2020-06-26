@@ -168,6 +168,11 @@ class MultiChoiceVC: UIViewController {
             // show the alert
             self.present(alert, animated: true, completion: nil)
         }
+
+
+        let homeViewController = self.storyboard?.instantiateViewController(identifier: "THomeVC") as? THomeViewController
+        self.view.window?.rootViewController = homeViewController
+        self.view.window?.makeKeyAndVisible()
     }
 
 

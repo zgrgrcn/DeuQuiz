@@ -10,7 +10,8 @@ import UIKit
 import Firebase
 
 class THomeViewController: UIViewController {
-
+    @IBOutlet weak var quizCodeText: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,4 +31,12 @@ class THomeViewController: UIViewController {
         }
     }
 
+    @IBAction func quizStatics(_ sender: Any) {
+        if(quizCodeText.text!.count==6){
+        let homeViewController = self.storyboard?.instantiateViewController(identifier: "TStatisticsVC") as? TStatsVC
+        homeViewController!.quizCodeText=quizCodeText.text!
+        self.view.window?.rootViewController = homeViewController
+        self.view.window?.makeKeyAndVisible()
+        }
+    }
 }
